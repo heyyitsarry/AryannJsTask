@@ -103,14 +103,4 @@ const obj1 = {
   'changeable': true
   }
 let obj2 = {...obj1}
-for(let i=0; i<=obj2.length; i++)
-{
-  for(item in obj2)
-  {
-    if(i==obj2.length)
-    {
-      obj2[i]="completed";
-    }
-  }
-}
 console.log(obj2)
