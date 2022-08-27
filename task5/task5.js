@@ -55,8 +55,8 @@ const cricket = [{
     var status = 'The number does not exist in the array';
 
     for (let i = 0; i < arr.length; i++) {
-        let name = arr[i];
-        if (name == value) {
+        let number = arr[i];
+        if (number == value) {
             status = 'The number exists in the array';
             break;
         }
@@ -104,3 +104,31 @@ const obj1 = {
   }
 let obj2 = {...obj1}
 console.log(obj2)
+
+// 10
+// if arr1 = [1,2,3,4,5,6]
+function remnum(index, arr1)
+{
+  let arr2=[];
+    for(let i=0; i<index; i++)
+    {
+      arr2.push(arr1[i]);
+    }
+    for(let j=index+1; j<arr1.length; j++)
+    {
+      arr2.push(arr1[j])
+    }
+    return arr2;
+}
+console.log(remnum(2,[1,2,3,4,5,6,7]));
+
+// 11
+const [firstElement,secondElement, ...restArr] = [10, 20, 30, 40, 50, 60, 70];
+console.log(restArr) 
+
+// 12
+const arr3 = [1,2,3,4,5]
+arr3.splice(0,2,5,6);
+console.log(arr3);
+
+
