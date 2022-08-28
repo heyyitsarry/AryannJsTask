@@ -27,14 +27,18 @@ const teams = [
 // removing the first element of the array "Teams" using spread operator    
 // const newarray = [...teams];
 // console.log(newarray);
+
+// 1
 const [firstelement, ...restelement] = [...teams];
 console.log(firstelement);
 console.log(restelement);
 
+// 2
 // removing the last element of the array "Teams" using slicing of the array
 const remlast = teams.slice(0,3);
 console.log(remlast);
 
+// 3
 //  finding total points of all teams
 let totalpoints = [];
 let sum = 0;
@@ -47,61 +51,65 @@ for (item in teams)
 // console.log(totalpoints);
 console.log("The sum of all the Points is :",sum);
 
+// 5
 group1=[];
-group2=[];
 for(let i=0; i<teams.length; i++)
 {
-    for(item in teams[i])
-    {
-
-        if(item == "points")
-        {
-            if(teams[i][item]>=20)
-            {
-                group1.push(teams[i]);
-            }
-            else
-            {
-                group2.push(teams[i]);
-            }
-        }
-    }
+   if(teams[i].points>=20 && teams[i].groupId[0]==1)
+   {
+       group1.push(teams[i]);
+   }
 }
 console.log(group1);
-console.log(group2);
 
-id4=[];
+// 6
+// let teamsid = [];
+// for(let i=0; i<=teams.length; i++)
+// {
+//     if(teams[i].id== 4)
+//     {
+//         teamsid.push(teams[i]);
+//     }
+// }
+// console.log(teamsid);
+
+// 8
+group34=[];
 for(let i=0; i<teams.length; i++)
 {
-    for(item in teams[i])
-    {
-
-        if(item == "id")
-        {
-            if(teams[i][item]==4)
-            {
-                id4.push(teams[i].name);
-            }
-        }
-    }
-}
-console.log(id4);
-
-group34 = [];
-for(let i=0; i<teams.length; i++)
-{
-    for(item in teams[i])
-    {
-        if(item == "groupId")
-        {
-            for(j in teams[i][item])
-            {
-                if(j==3)
-                {
-                    group34.push(teams[i]);
-                }
-            }
-        }
-    }
+   if(teams[i].groupId[0]==3 && teams[i].groupId[1]==4 || teams[i].groupId[0]==4 && teams[i].groupId[1]==3)
+   {
+       group34.push(teams[i]);
+   }
 }
 console.log(group34);
+
+// 9
+updatedgrouppoints=[];
+for(let i=0; i<teams.length; i++)
+{
+   if(teams[i].groupId[0]==3 || teams[i].groupId[1]==3)
+   {
+       teams[i].points = teams[i].points-5;
+       updatedgrouppoints.push(teams[i])
+   }
+   else{
+    updatedgrouppoints.push(teams[i])
+   }
+}
+console.log(updatedgrouppoints);
+
+// 11
+console.log(teams.filter(({points}) => points>10 )  );
+console.log(teams.filter(({points}) => points===10 )  );
+
+// 12
+manU = { name: "Manchester United", 
+id: 1, group: ["ChampionsLeague", "League Cup"], 
+points: 10, jerseyColour: "red", 
+homeGround: "Old Trafford", 
+awayJerseyColour: "black", 
+captain: "Harry", 
+coach: "OGS", }
+
+// consle.log(manU.filter({awayJerseyColour} => awayJerseyColour);
