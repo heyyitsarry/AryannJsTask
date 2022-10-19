@@ -116,3 +116,30 @@ let sorted=sampleData.matches.sort((a,b) => {
     return a.Id - b.Id;
 })
 console.log(sorted);
+
+// 3
+let knockoutmatches=[];
+for(i in sampleData)
+{
+    for(j in sampleData[i].matches)
+    {
+        if(sampleData[i].matches[j].knockout === true)
+        {
+            knockoutmatches.push(sampleData[i].matches[j]);
+        }
+    }
+}
+
+console.log(knockoutmatches);
+
+// 4
+let knocks = []
+for(i in sampleData)
+{
+    for(j in sampleData[i].matches)
+    {
+        
+            knocks.push(sampleData[i].matches[j].name,sampleData[i].matches[j].knockout);
+    }
+}
+console.log(knocks);
