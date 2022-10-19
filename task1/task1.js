@@ -77,8 +77,8 @@ const comp2 = [
 ];
 
 // 1
-const newarray = [...comp1, ...comp2]
-console.log(newarray);
+    const newarray = [...comp1, ...comp2]
+    console.log(newarray);
 
 // 3
 let newarray1 = [];
